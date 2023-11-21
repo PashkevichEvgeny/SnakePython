@@ -7,6 +7,7 @@ import curses
 # Импортируем класс Point из файла point.py
 from horizontal_line import HorizontalLine
 from point import Point
+from vertical_line import VerticalLine
 
 
 def canvas():
@@ -22,18 +23,24 @@ def canvas():
 
 if __name__ == '__main__':
     canvas = canvas()
+    # Размеры полотна
+    height, width = canvas.getmaxyx()
+    # Настройка размеров полотна
+    height, width = height - 2, width - 1
 
-    # Создаем точку и передаем ей значения в контруктор
-    p1 = Point(canvas, 1, 3, '*')
-    p1.draw()
+    # Отрисовка рамочки
+    up_line = HorizontalLine(canvas, 1, width, 1, '+')
+    down_line = HorizontalLine(canvas, 1, width, height, '+')
+    left_line = VerticalLine(canvas, 1, height, 1, '+')
+    right_line = VerticalLine(canvas, 1, height, width, '+')
+    up_line.draw()
+    down_line.draw()
+    left_line.draw()
+    right_line.draw()
 
-    # Создаем еще одну точку
-    p2 = Point(canvas, 4, 5, '#')
-    p2.draw()
-
-    # Рисуем линию
-    line = HorizontalLine(canvas, 5, 10, 3, '+')
-    line.draw()
+    # Отрисовка точки
+    p = Point(canvas, 4, 5, '#')
+    p.draw()
 
     # Устанавлиаем задержку 3000 мс., чтобы просмотреть результат отрисовки
     curses.napms(3000)
