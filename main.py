@@ -31,8 +31,9 @@ if __name__ == '__main__':
     p2 = Point(canvas, 4, 5, '#')
     p2.draw()
 
-    line = HorizontalLine(canvas)
+    # Рисуем линию
+    line = HorizontalLine(canvas, 5, 10, 3, '+')
     line.draw()
-    
+
     # Устанавлиаем задержку 3000 мс., чтобы просмотреть результат отрисовки
     curses.napms(3000)
