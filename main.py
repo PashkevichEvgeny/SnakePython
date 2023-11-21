@@ -19,17 +19,6 @@ def canvas():
     return new_canvas
 
 
-def draw(canvas_, x, y, sym):
-    """
-    Функция принимает полотно, координаты точки и символ, который потом отрисовывает
-    """
-    # Рисуем символ в заданных координатах
-    canvas_.addstr(y, x, sym)
-
-    # Обновляем полотно
-    canvas.refresh()
-
-
 if __name__ == '__main__':
     canvas = canvas()
 
@@ -42,12 +31,18 @@ if __name__ == '__main__':
     p1.y = 3
     p1.sym = '*'
 
-    draw(p1.canvas, p1.x, p1.y, p1.sym)
+    p1.draw()
 
-    x2 = 4
-    y2 = 5
-    sym2 = '#'
-    draw(canvas, x2, y2, sym2)
+    # Создаем еще одну точку
+    p2 = Point()
+
+    # Задаем значения переменным
+    p2.canvas = canvas
+    p2.x = 4
+    p2.y = 5
+    p2.sym = '#'
+
+    p2.draw()
 
     # Устанавлиаем задержку 3000 мс., чтобы просмотреть результат отрисовки
     curses.napms(3000)
