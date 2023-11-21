@@ -6,6 +6,7 @@ import curses
 
 # Импортируем класс Point из файла point.py
 from horizontal_line import HorizontalLine
+from human_employee import Employee
 from point import Point
 from vertical_line import VerticalLine
 
@@ -44,3 +45,10 @@ if __name__ == '__main__':
 
     # Устанавлиаем задержку 3000 мс., чтобы просмотреть результат отрисовки
     curses.napms(3000)
+
+    # Создаем работника
+    employee = Employee()
+    # У него есть свойство возраст из класса Human
+    employee.age = 42
+    # И свойство зарплата из класса Employee
+    employee.pay = 30_000
