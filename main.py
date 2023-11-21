@@ -4,6 +4,9 @@ import curses
 # В случае ошибки "Redirection is not supported."
 # установите галочку в Run -> EditConfigurations -> Emulate terminal in output console
 
+# Импортируем класс Point из файла point.py
+from point import Point
+
 
 def canvas():
     """
@@ -30,10 +33,16 @@ def draw(canvas_, x, y, sym):
 if __name__ == '__main__':
     canvas = canvas()
 
-    x1 = 1
-    y1 = 3
-    sym1 = '*'
-    draw(canvas, x1, y1, sym1)
+    # Создаем экземпляр класса Point
+    p1 = Point()
+
+    # Задаем значения переменным
+    p1.canvas = canvas
+    p1.x = 1
+    p1.y = 3
+    p1.sym = '*'
+
+    draw(p1.canvas, p1.x, p1.y, p1.sym)
 
     x2 = 4
     y2 = 5
@@ -42,6 +51,3 @@ if __name__ == '__main__':
 
     # Устанавлиаем задержку 3000 мс., чтобы просмотреть результат отрисовки
     curses.napms(3000)
-
-
-
