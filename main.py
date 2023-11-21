@@ -32,3 +32,28 @@ if __name__ == '__main__':
 
     # Устанавлиаем задержку 3000 мс., чтобы просмотреть результат отрисовки
     curses.napms(3000)
+
+    # Создаем список и добавляем в него три числа
+    num_list = list()
+    num_list.append(0)
+    num_list.append(1)
+    num_list.append(2)
+
+    # Создаем три переменных и присваиваем им значения из списка чисел
+    x = num_list[0]
+    y = num_list[1]
+    z = num_list[2]
+
+    # Цикл for для перебора значений из списка
+    for i in num_list:
+        print(i)
+
+    # Извлекаем из списка элемент под индексом 0
+    num_list.pop(0)
+
+    # Создаем список с точками p1 и p2
+    p_list = list()
+    p_list.append(p1)
+    p_list.append(p2)
+
+    print()
