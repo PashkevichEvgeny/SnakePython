@@ -20,3 +20,5 @@ class Point:
 
         # Обновляем полотно
         self.canvas.refresh()
+
+
