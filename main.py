@@ -23,8 +23,14 @@ if __name__ == '__main__':
     y1 = 3
     sym1 = '*'
 
+    x2 = 4
+    y2 = 5
+    sym2 = '#'
+
     # Рисуем символ в заданных координатах
     canvas.addstr(y1, x1, sym1)
+    # Рисуем еще один символ
+    canvas.addstr(y2, x2, sym2)
 
     # Обновляем полотно
     canvas.refresh()
