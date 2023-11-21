@@ -7,6 +7,14 @@ class Point:
     y = 0
     sym = ' '
 
+    # Конструктор в Python - это метод.
+    # Для возможности вызова класса без параметров надо установить значения по умолчанию
+    def __init__(self, canvas=None, x=0, y=0, sym=' '):
+        self.canvas = canvas
+        self.x = x
+        self.y = y
+        self.sym = sym
+
     # Передаем в метод параметр self для обращения к свойствам экземпляра
     def draw(self):
         """
